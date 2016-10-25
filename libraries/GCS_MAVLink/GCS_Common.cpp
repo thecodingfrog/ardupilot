@@ -1654,7 +1654,7 @@ void GCS_MAVLINK::send_home_all(const Location &home)
 /*
   wrapper for sending heartbeat
  */
-void GCS_MAVLINK::send_heartbeat(uint8_t type, uint8_t base_mode, uint32_t custom_mode, uint8_t system_status)
+void GCS_MAVLINK::send_heartbeat(uint8_t type, uint8_t base_mode, uint32_t custom_mode, uint8_t system_status, uint8_t prearm_status)
 {
     mavlink_msg_heartbeat_send(
         chan,
@@ -1662,7 +1662,8 @@ void GCS_MAVLINK::send_heartbeat(uint8_t type, uint8_t base_mode, uint32_t custo
         MAV_AUTOPILOT_ARDUPILOTMEGA,
         base_mode,
         custom_mode,
-        system_status);
+        system_status,
+		prearm_status);
 }
 
 float GCS_MAVLINK::adjust_rate_for_stream_trigger(enum streams stream_num)

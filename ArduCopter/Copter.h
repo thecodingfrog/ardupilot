@@ -708,6 +708,7 @@ private:
     void send_current_waypoint(mavlink_channel_t chan);
     void send_rangefinder(mavlink_channel_t chan);
     void send_rpm(mavlink_channel_t chan);
+	void send_pream_status(mavlink_channel_t chan);
     void rpm_update();
     void button_update();
     void init_proximity();
